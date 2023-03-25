@@ -1,0 +1,5 @@
+*forms.py
+-form oluşturmak için app altında forms.py adında bir file oluşturuyoruz.
+-kapsamlı bir front-end yerine formlar da hızlıca işimizi çözebilir.
+*templates
+-app içinde templates klasörü oluşturuyoruz.

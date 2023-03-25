@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} List To-Do {% endblock %}
+{% block extra_css %}
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+{% endblock %}
+
+{% block container %}
+{% block page_title %}
+  <h1>Welcome to list</h1>
+{% endblock %}
+
+
+
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Created Date</th>
+        <th>Updated Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+        <tr>
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.desc }}</td>
+          <td>{{ todo.get_priority_display }}</td>
+          <td>{{ todo.get_status_display }}</td>
+          <td>{{ todo.created_date }}</td>
+          <td>{{ todo.updated_date }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="6">No todos found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    {% endblock container %}
+
+{% comment %} ? get_priority_display ve get_status_display metodları, öncelik ve durum alanlarındaki seçenek değerlerinin anlamlı şekilde görüntülenmesini sağlamak için kullanılır. {% endcomment %}
