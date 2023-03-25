@@ -3,3 +3,30 @@
 -kapsamlı bir front-end yerine formlar da hızlıca işimizi çözebilir.
 *templates
 -app içinde templates klasörü oluşturuyoruz.
+*bootstrap
+-bootstrap in ilgili 2 tane linkini bae.html'e koyuyoruz
+
+*++
+<a href="delete/{{todo.id}}" onclick="return confirm('are you sure ?')">Delete</a>
+
+! django rest framework ile django dökümantasyonları farklı.aşağıdaki view'lar django dökümantasyonunda mevcut.rest'tekiler ise bunlardan türetilen viewlar..
+from django.views.generic import(
+    ListView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+    DetailView,
+)
+
+! function-based views
+app > templates içindeki html file'ları otomatik tanır.
+! class-based views
+app > templates > app içindeki html file'ları otomatik tanır (suffix şartı ile)
+*source code
+ListView > template_name_suffix = "_list"
+-class-based views da bazı kurallar var.template klasörü altında varolan app in isminde bir klasör altında suffix yukarıdaki gibi olacak şiekilde template leri tanımla diyor.
+-fakat 
+    template_name = 'todo/todo_delete.html'
+    gibi bir kod ile bu kuraldan çıkabiliriz.(views'da)
+
+? object_list (list.html,class-based), ListView sınıfında bir modelden alınan nesnelerin listesi olarak tanımlanır. ListView sınıfı, varsayılan olarak, veritabanındaki belirli bir modelden tüm nesneleri alır ve object_list adlı bir değişkene atar. Bu nesne listesi, ListView'in template'inde {% for %} döngüsü içinde kullanılabilir.

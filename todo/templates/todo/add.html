@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% block title %} Add To-Do {% endblock %} 
+{% block container %} 
+{% block page_title %}
+<h1>Welcome to Add To-Do</h1>
+{% endblock %}
+
+
+   <form action="" method="POST">
+    {% csrf_token %}
+    <table>{{form}}</table>
+    <input type="submit" value="Add Todo"/>
+
+   </form>
+
+
+
+
+
+{% endblock container %} 
+

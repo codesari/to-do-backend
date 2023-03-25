@@ -4,7 +4,7 @@
 {% block page_title %}
 <h1>Welcome to list</h1>
 {% endblock %}
-
+<a href="/add" class="btn btn-primary">Add Todo</a>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    {% for todo in todos %}
+    {% for todo in object_list %}
     <tr>
       <td>{{ todo.title }}</td>
       <td>{{ todo.desc }}</td>
@@ -46,7 +46,8 @@
                     {{ todo.get_status_display }}</b></td>
       <td>{{ todo.created_date }}</td>
       <td>{{ todo.updated_date }}</td>
-      <td><a href="update/{{todo.id}}">Update</a> <a href="delete/{{todo.id}}" onclick="return confirm('are you sure ?')">Delete</a> </td>
+      <td><a href="update/{{todo.id}}">Update</a> <a href="delete/{{todo.id}}" >Delete </a><a href="detail/{{todo.id}}" >Detail</a> </td>
+      {% comment %} onclick="return confirm('are you sure ?')" {% endcomment %}
       
         
       <
